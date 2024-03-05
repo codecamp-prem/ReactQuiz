@@ -1,6 +1,7 @@
 import { useSQLiteContext } from "expo-sqlite/next";
 import { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { ScrollView } from "react-native";
+import QaUI from "../components/QaUI";
 import { QAProps } from "../types";
 
 const Home = () => {
@@ -24,9 +25,9 @@ const Home = () => {
   }
 
   return (
-    <View>
-      <Text>Home Screen</Text>
-    </View>
+    <ScrollView contentContainerStyle={{ padding: 15, paddingVertical: 170 }}>
+      <QaUI allQA={allQA} />
+    </ScrollView>
   );
 };
 
