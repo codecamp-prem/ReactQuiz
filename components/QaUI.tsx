@@ -12,7 +12,7 @@ const QaUI = ({ allQA }: { allQA: QAProps[] }) => {
   ];
   return (
     <View>
-      {allQA.map((qa: QAProps) => {
+      {allQA.map((qa) => {
         const source = { html: `${qa.answer}` };
         return (
           <View key={qa.id} className="py-4">
@@ -21,7 +21,7 @@ const QaUI = ({ allQA }: { allQA: QAProps[] }) => {
                 colorArray
               )}`}
             >
-              Q) {qa.question}
+              {`Q) ${qa.question}`}
             </Text>
             {/* <Text className="py-3 text-base leading-relaxed text-body-color dark:text-dark-6">
               {qa.answer}
