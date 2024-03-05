@@ -24,8 +24,8 @@ const loadDatabase = async () => {
       `${FileSystem.documentDirectory}SQLite`,
       { intermediates: true }
     );
-    await FileSystem.downloadAsync(dbURI, dbFilePath);
   }
+  await FileSystem.downloadAsync(dbURI, dbFilePath);
 };
 
 // async/await not needed when there is nothing to do after  async/await task.
@@ -33,12 +33,11 @@ const loadDatabase = async () => {
 
 export default function App() {
   const [dbLoaded, setDbLoaded] = useState(false);
-  //const [allQA, setItems] = useState(null);
 
   useEffect(() => {
     loadDatabase()
       .then(() => setDbLoaded(true))
-      .catch((e) => console.log(e));
+      .catch((e) => console.log("loadDB error: ", e));
   }, []);
 
   if (!dbLoaded) {
